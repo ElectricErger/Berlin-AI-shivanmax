@@ -8,7 +8,7 @@ class Berlin::AI::Player
     # puts "----"
 
 
-    #attack code
+    #attack strategy
     game.map.foreign_nodes.reject{ |x| x.free? }.each do |enemy_node|
       game.map.controlled_nodes.each do |our_node|
         soldiers=our_node.available_soldiers
@@ -21,7 +21,7 @@ class Berlin::AI::Player
 
 
 
-    #move code
+    #move strategy
     game.map.controlled_nodes.each do |node|
       node.adjacent_nodes.each do |adjacent_node|
         if !adjacent_node.occupied?
