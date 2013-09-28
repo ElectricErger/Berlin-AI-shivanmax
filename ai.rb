@@ -9,7 +9,7 @@ class Berlin::AI::Player
 
 
     #attack strategy
-    game.map.foreign_nodes.reject{ |x| x.free? }.each do |enemy_node|
+    game.map.foreign_nodes.reject{ |x| x.free? }.each do |enemy_node| #there was a slight issue with the API, so we had to code the 'getting all nodes occupied by enemy' part in a roundabout way
       game.map.controlled_nodes.each do |our_node|
         soldiers=our_node.available_soldiers
         if our_node.adjacent?(enemy_node) and (soldiers>enemy_node.available_soldiers)
